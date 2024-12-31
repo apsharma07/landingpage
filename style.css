@@ -1,22 +1,19 @@
-/* General Styles */
 *{
-    scroll-behavior: smooth;
-    box-sizing: border-box;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #ff0000;
-  }
-  
-  h1, h2, h3 {
-    margin: 0;
-  }
-  
-  a {
-    text-decoration: none;
-  }
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ff0000;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
 .bg-cover {
   height: 100vh;
   background-image: url('pexels-freestockpro-3278215.jpg'); /* Replace with your image */
@@ -28,7 +25,6 @@ body {
   justify-content: space-between;
   color: white;
 }
-
 .bg-cover::before {
   content: '';
   position: absolute;
@@ -39,7 +35,6 @@ body {
   background-color: rgba(0, 0, 0, 0.5); /* Add overlay for text readability */
   z-index: -1;
 }
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -50,20 +45,17 @@ body {
   top: 0;
   width: 100%;
 }
-
 .logo a {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
-
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
-
 .nav-links li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -71,42 +63,48 @@ body {
   transition: color 0.3s;
   font-weight: bold;
 }
-
 .nav-links li a:hover {
   color: #ff6b6b;
 }
-
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
 }
-
 .hamburger span {
   width: 25px;
   height: 3px;
   background-color: white;
   border-radius: 2px;
+  transition: 0.3s;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
 }
-
+.hamburger.active span:nth-child(1) {
+  transform:translate(-50%,170%) rotate(45deg) ;
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform:translate(-50%,-350%) rotate(-45deg);
+}
 .container {
   text-align: center;
   margin-top: auto;
   margin-bottom: auto;
   z-index: 1;
 }
-
 .container h1 {
   font-size: 3rem;
   font-weight: bold;
 }
-
 .container p {
   font-size: 1.2rem;
   margin-top: 1rem;
 }
-
 .container .btn {
   padding: 0.8rem 2rem;
   font-size: 1rem;
@@ -120,76 +118,46 @@ body {
 .container .btn:hover {
   background-color: #0056b3;
 }
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 10;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
 #about {
     height: 100vh;
     padding: 4rem 0;
     background-color: #fff;
     text-align: center;
 }
-  
-  #about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  #about p {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-top: 1rem;
-  }
-  
-  /* Destinations Section */
-  #destinations {
-    padding: 4rem 0;
-  }
-  
-  #destinations .card {
-    border: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  #destinations .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  #destinations .card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  #destinations .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0.5rem 0;
-  }
-  
-  /* Travel Packages Section */
-  #packages {
-    background-color: #f8f9fa;
-    padding: 4rem 0;
-  }
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+#about p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+#destinations {
+  padding: 4rem 0;
+}
+#destinations .card {
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#destinations .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+#destinations .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+#destinations .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+#packages {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+}
   
   #packages .card {
     border: none;
@@ -283,9 +251,28 @@ body {
   footer a:hover {
     color: #ff3d3d;
   }
-  
-  /* Responsive Styles */
   @media (max-width: 768px) {
+    .nav-links {
+      background-color: white;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60%;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+    }
+    .nav-links li{
+      padding: 5px;
+    }
+    .nav-links.active {
+      transition: 0.6s ease;
+      display: flex;
+    }
+    .hamburger {
+      display: flex;
+    }
     header h1 {
       font-size: 2.2rem;
     }
