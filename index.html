@@ -26,7 +26,7 @@
         </div>
       </nav>
         <div class="container text-center">
-          <h1 class="display-4 text-white">Discover Your Next Adventure</h1>
+          <h1 class="display-4 text-white">Discover Your <p id="typedText"></p></h1>
           <p class="lead text-white">Explore the world’s top destinations and create unforgettable memories.</p>
           <a href="#packages" class="btn btn-primary mt-4">Explore Packages</a>
         </div>
@@ -108,26 +108,18 @@
           </div>
         </div>
       </section>
-      <section id="contact" class="py-5">
-        <div class="container">
-          <h2 class="text-center mb-4">Contact Us</h2>
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Send Message</button>
-          </form>
-        </div>
-      </section>
+      <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="2d7cba8e-9eac-491f-81bf-231ceb3b3a20">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="number" name="number" placeholder="Contact Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <button type="submit">Submit Form</button>
+        </form>
+    </section>
       <footer class="bg-dark text-white py-4">
         <div class="container text-center">
           <p>&copy; 2024 Travel Explorer. All Rights Reserved.</p>
